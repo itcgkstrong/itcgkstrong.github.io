@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IslandTech Computer Group | Oracle database development, application support and development, data warehousing and reporting</title>
+<meta name="description" content="IslandTech Computer Group: independent Oracle database development, data warehousing, ETL and reporting consulting, based in British Columbia.">
+<style>
+  :root {
+    --bg: #fbfbf9;
+    --ink: #1c2530;
+    --muted: #55606c;
+    --line: #d5dae0;
+    --accent: #0b5c73;
+    --placeholder: #eef1f4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f;
+      --ink: #e6eaee;
+      --muted: #a3adb8;
+      --line: #2b3541;
+      --accent: #6cc3da;
+      --placeholder: #1b2430;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+  main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; font-weight: 700; }
+  h1 { font-size: 2.2rem; margin: 0 0 .25rem; }
+  .tagline { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.5rem; }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 .25rem; }
+  p { margin: 0 0 .75rem; max-width: 38rem; }
+  ul { margin: 0 0 .75rem; padding-left: 1.2rem; }
+  li { margin-bottom: .35rem; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible, .toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  dl { margin: 0; }
+  dt { font-weight: 600; margin-top: .6rem; }
+  dd { margin: 0; color: var(--muted); }
+  footer { margin-top: 3rem; color: var(--muted); font-size: .9rem; }
+
+  /* Banner and logo placeholders.
+     When you add real images, delete the .placeholder class and the
+     placeholder text, and use the <img> tags shown in the HTML comments. */
+  .banner { width: 100%; margin: 0 0 1.5rem; }
+  .banner img { display: block; width: 100%; height: auto; }
+  .logo { margin: 0 0 1rem; }
+  .logo img { display: block; height: 3.5rem; width: auto; }
+  .placeholder {
+    display: flex; align-items: center; justify-content: center;
+    background: var(--placeholder);
+    border: 2px dashed var(--line);
+    color: var(--muted);
+    font-size: .85rem;
+    text-align: center;
+  }
+  .banner.placeholder { aspect-ratio: 4 / 1; }
+  .logo.placeholder { width: 10rem; height: 3.5rem; }
+
+  /* Sections */
+  section { border-top: 1px solid var(--line); margin-top: 1.25rem; }
+  .section-title { margin: 0; font-size: 1.35rem; }
+  .toggle {
+    all: unset;
+    box-sizing: border-box;
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%;
+    padding: .9rem 0;
+    cursor: pointer;
+    font: inherit;
+  }
+  .toggle::after { content: "+"; font-family: -apple-system, "Segoe UI", Arial, sans-serif; font-weight: 400; color: var(--accent); }
+  .toggle[aria-expanded="true"]::after { content: "\2212"; }
+  .section-body { padding-bottom: 1rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- BANNER PLACEHOLDER
+       Replace the div below with:
+       <div class="banner"><img src="images/banner.jpg" alt="IslandTech Computer Group" width="1600" height="400"></div>
+       Suggested size: 1600 x 400 px (4:1). Keep any text in the image to a minimum. -->
+  <div class="banner placeholder" role="img" aria-label="Banner image placeholder">Banner image (suggested 1600 x 400 px)</div>
+
+  <header>
+    <!-- LOGO PLACEHOLDER
+         Replace the div below with:
+         <div class="logo"><img src="images/logo.svg" alt="IslandTech Computer Group logo" height="56"></div>
+         Suggested: SVG or transparent PNG, about 56 px high. -->
+    <div class="logo placeholder" role="img" aria-label="Logo placeholder">Logo</div>
+
+    <h1>IslandTech Computer Group</h1>
+    <p class="tagline">Independent Oracle database development, data warehousing and reporting consultant. Serving clients since 1997.</p>
+    <p>IslandTech Computer Group is based in British Columbia. We provide systems support, build and maintain data warehouses, ETL and reporting, and modernize and automate application deployment pipelines.</p>
+  </header>
+
+  <section data-accordion>
+    <h2 class="section-title">Services</h2>
+    <div class="section-body">
+      <ul>
+        <li>Data warehouse design, ETL and data modelling</li>
+        <li>Oracle SQL and PL/SQL development</li>
+        <li>Oracle Reports development</li>
+        <li>Release automation for databases, reports and applications (Jenkins, GitHub Actions)</li>
+        <li>Continnual system modernization</li>
+        <li>REST and JWT data integration</li>
+        <li>Linux system administraiton and support</li>
+        <li>Requirements analysis, systems analysis, technical documentation and user training</li>
+      </ul>
+    </div>
+  </section>
+
+  <section data-accordion>
+    <h2 class="section-title">Selected work</h2>
+    <div class="section-body">
+      <p>Client details are confidential, so these examples are anonymized.</p>
+
+      <h3>One-click release automation</h3>
+      <p>For a provincial government financial data warehouse, I replaced a multi-person manual release process with an automated pipeline using Jenkins and GitHub Actions. One person can now release reports, applications and database changes across delivery, test and production databases in a single step. This removed the multi-week scheduling lead time and cut emergency-fix turnaround from at least two days to a single afternoon.</p>
+
+      <h3>Data feed migration to a REST API</h3>
+      <p>I moved a PeopleSoft data feed from a direct Oracle database extract to REST access with JWT authentication against a cloud-hosted source on Oracle Cloud Infrastructure. I wrote the PL/SQL component that calls the API with UTL_HTTP and reworked the warehouse load. The warehouse target data model did not change.</p>
+    </div>
+  </section>
+
+  <section data-accordion>
+    <h2 class="section-title">Technology</h2>
+    <div class="section-body">
+      <dl>
+        <dt>Databases</dt>
+        <dd>Oracle 19c, 12c, 11g; SQL; PL/SQL; SQL*Loader; Oracle Partitioning; Virtual Private Database; Oracle Advanced Security; Oracle Financials R12; PeopleSoft schema; AirTable</dd>
+        <dt>Reporting and middleware</dt>
+        <dd>Oracle Reports 12c; Oracle Fusion Middleware / OAS 12c</dd>
+        <dt>Delivery</dt>
+        <dd>Git; Jenkins; GitHub Actions; Ansible; CI/CD; Docker; Vagrant; VirtualBox</dd>
+        <dt>Integration and scripting</dt>
+        <dd>REST; JWT; JavaScript; Node; bash/ksh; Linux</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section data-accordion>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-body">
+      <p>Available for contract engagements.</p>
+      <p><script type="text/javascript">document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'l'+'t'+'o'+':'+'i'+'n'+'f'+'o'+'@'+'i'+'s'+'l'+'a'+'n'+'d'+'t'+'e'+'c'+'h'+'.'+'b'+'c'+'.'+'c'+'a'+"'"+'>'+'E'+'m'+'a'+'i'+'l'+' '+'u'+'s'+' '+'h'+'e'+'r'+'e'+'<'+'/'+'a'+'>');</script><br>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; IslandTech Computer Group</p>
+  </footer>
+</main>
+
+<script>
+/* Minimal accordion. Sections start collapsed and open on click.
+   Without JavaScript, every section stays visible. */
+(function () {
+  var sections = document.querySelectorAll('[data-accordion]');
+  sections.forEach(function (section, i) {
+    var title = section.querySelector('.section-title');
+    var body = section.querySelector('.section-body');
+    var label = title.textContent;
+    var bodyId = 'section-body-' + i;
+
+    body.id = bodyId;
+    body.hidden = true;
+
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'toggle';
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', bodyId);
+    button.textContent = label;
+
+    title.textContent = '';
+    title.appendChild(button);
+
+    button.addEventListener('click', function () {
+      var open = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!open));
+      body.hidden = open;
+    });
+  });
+})();
+</script>
+</body>
+</html>
