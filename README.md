@@ -1,1 +1,0 @@
-# itcgkstrong.github.io
