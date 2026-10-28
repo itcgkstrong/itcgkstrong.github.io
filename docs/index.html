@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IslandTech Computer Group | Oracle database development, application support and development, data warehousing and reporting</title>
+<title>IslandTech Computer Group | Database and application development and support</title>
 <meta name="description" content="IslandTech Computer Group: independent Oracle database development, data warehousing, ETL and reporting consulting, based in British Columbia.">
 <style>
   :root {
-    --bg: #fbfbf9;
-    --ink: #1c2530;
+    --bg: #030910;
+    --ink: #418fef;
     --muted: #55606c;
     --line: #d5dae0;
     --accent: #0b5c73;
@@ -17,7 +17,7 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #12181f;
-      --ink: #e6eaee;
+      --ink: #82b0e8;
       --muted: #a3adb8;
       --line: #2b3541;
       --accent: #6cc3da;
@@ -111,9 +111,9 @@
         <li>Oracle SQL and PL/SQL development</li>
         <li>Oracle Reports development</li>
         <li>Release automation for databases, reports and applications (Jenkins, GitHub Actions)</li>
-        <li>Continnual system modernization</li>
+        <li>Continual system modernization</li>
         <li>REST and JWT data integration</li>
-        <li>Linux system administraiton and support</li>
+        <li>Linux system administration and support</li>
         <li>Requirements analysis, systems analysis, technical documentation and user training</li>
       </ul>
     </div>
@@ -125,10 +125,10 @@
       <p>Client details are confidential, so these examples are anonymized.</p>
 
       <h3>One-click release automation</h3>
-      <p>For a provincial government financial data warehouse, I replaced a multi-person manual release process with an automated pipeline using Jenkins and GitHub Actions. One person can now release reports, applications and database changes across delivery, test and production databases in a single step. This removed the multi-week scheduling lead time and cut emergency-fix turnaround from at least two days to a single afternoon.</p>
+      <p>For a provincial government financial data warehouse, we replaced a multi-person manual release process with an automated pipeline using Jenkins and GitHub Actions. One person can now release reports, applications and database changes across delivery, test and production databases in a single step. This removed the multi-week scheduling lead time and cut emergency-fix turnaround from multiple days to a single afternoon.</p>
 
       <h3>Data feed migration to a REST API</h3>
-      <p>I moved a PeopleSoft data feed from a direct Oracle database extract to REST access with JWT authentication against a cloud-hosted source on Oracle Cloud Infrastructure. I wrote the PL/SQL component that calls the API with UTL_HTTP and reworked the warehouse load. The warehouse target data model did not change.</p>
+      <p>We moved a PeopleSoft data feed from a direct Oracle database extract to REST access with JWT authentication against a cloud-hosted source on Oracle Cloud Infrastructure. We developed the PL/SQL components that handled the REST layer and isolated the change from other components.</p>
     </div>
   </section>
 
@@ -165,17 +165,17 @@
 /* Minimal accordion. Sections start collapsed and open on click.
    Without JavaScript, every section stays visible. */
 (function () {
-  var sections = document.querySelectorAll('[data-accordion]');
+  let sections = document.querySelectorAll('[data-accordion]');
   sections.forEach(function (section, i) {
-    var title = section.querySelector('.section-title');
-    var body = section.querySelector('.section-body');
-    var label = title.textContent;
-    var bodyId = 'section-body-' + i;
+    let title = section.querySelector('.section-title');
+    let body = section.querySelector('.section-body');
+    let label = title.textContent;
+    let bodyId = 'section-body-' + i;
 
     body.id = bodyId;
     body.hidden = true;
 
-    var button = document.createElement('button');
+    let button = document.createElement('button');
     button.type = 'button';
     button.className = 'toggle';
     button.setAttribute('aria-expanded', 'false');
@@ -186,7 +186,7 @@
     title.appendChild(button);
 
     button.addEventListener('click', function () {
-      var open = button.getAttribute('aria-expanded') === 'true';
+      let open = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!open));
       body.hidden = open;
     });
