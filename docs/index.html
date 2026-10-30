@@ -32,13 +32,13 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
   }
-  main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  main { max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
   h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; font-weight: 700; }
   h1 { font-size: 2.2rem; margin: 0 0 .25rem; }
   h3 { font-size: 1.05rem; margin: 1.5rem 0 .25rem; color: var(--line) }
   .tagline { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.5rem; }
 
-  p { margin: 0 0 .75rem; max-width: 38rem; }
+  p { margin: 0 0 .75rem; max-width: 90%; }
   ul { margin: 0 0 .75rem; padding-left: 1.2rem; }
   li { margin-bottom: .35rem; }
   a { color: var(--accent); text-underline-offset: 2px; }
@@ -67,7 +67,11 @@
   .logo.placeholder { width: 10rem; height: 3.5rem; }
 
   /* Sections */
-  section { border-top: 1px solid var(--line); margin-top: 1.25rem; }
+  section {
+      border-top: 1px solid var(--line);
+      margin-top: 1.25rem;
+      transition: data-accordion 1.5s ease-out;
+  }
   .section-title { margin: 0; font-size: 1.35rem; }
   .toggle {
     all: unset;
@@ -80,7 +84,7 @@
   }
   .toggle::after { content: "+"; font-family: -apple-system, "Segoe UI", Arial, sans-serif; font-weight: 400; color: var(--accent); }
   .toggle[aria-expanded="true"]::after { content: "\2212"; }
-  .section-body { padding-bottom: 1rem; }
+  .section-body { padding-bottom: 1rem; width: 90%;}
 </style>
 </head>
 <body>
