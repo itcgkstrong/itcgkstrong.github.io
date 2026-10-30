@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IslandTech Computer Group | Database and application development and support</title>
 <meta name="description" content="IslandTech Computer Group: independent Oracle database development, data warehousing, ETL and reporting consulting, based in British Columbia.">
+<script>document.documentElement.className += " js";</script>
 <style>
   :root {
-    --bg: #030910;
-    --ink: #418fef;
+    --bg: #fbfbf9;
+    --ink: #1c2530;
     --muted: #55606c;
     --line: #d5dae0;
     --accent: #0b5c73;
@@ -17,9 +18,9 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #12181f;
-      --ink: #82b0e8;
+      --ink: #e6eaee;
       --muted: #a3adb8;
-      --line: #d5dae0;
+      --line: #2b3541;
       --accent: #6cc3da;
       --placeholder: #1b2430;
     }
@@ -35,10 +36,10 @@
   main { max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
   h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; font-weight: 700; }
   h1 { font-size: 2.2rem; margin: 0 0 .25rem; }
-  h3 { font-size: 1.05rem; margin: 1.5rem 0 .25rem; color: var(--line) }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 .25rem;}
   .tagline { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.5rem; }
 
-  p { margin: 0 0 .75rem; max-width: 90%; }
+  p { margin: 0 0 .75rem; max-width: 90%; color: var(--muted)}
   ul { margin: 0 0 .75rem; padding-left: 1.2rem; }
   li { margin-bottom: .35rem; }
   a { color: var(--accent); text-underline-offset: 2px; }
@@ -67,11 +68,7 @@
   .logo.placeholder { width: 10rem; height: 3.5rem; }
 
   /* Sections */
-  section {
-      border-top: 1px solid var(--line);
-      margin-top: 1.25rem;
-      transition: data-accordion 1.5s ease-out;
-  }
+  section { border-top: 1px solid var(--line); margin-top: 1.25rem; }
   .section-title { margin: 0; font-size: 1.35rem; }
   .toggle {
     all: unset;
@@ -84,7 +81,20 @@
   }
   .toggle::after { content: "+"; font-family: -apple-system, "Segoe UI", Arial, sans-serif; font-weight: 400; color: var(--accent); }
   .toggle[aria-expanded="true"]::after { content: "\2212"; }
-  .section-body { padding-bottom: 1rem; width: 90%;}
+  /* Animated open/close. Change --accordion-speed to adjust. */
+  :root { --accordion-speed: 0.5s; }
+  .js .section-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows var(--accordion-speed) ease, visibility var(--accordion-speed);
+  }
+  .js .section-body.open { grid-template-rows: 1fr; visibility: visible; }
+  .section-inner { overflow: hidden; min-height: 0; }
+  .section-inner > :last-child { margin-bottom: 1rem; }
+  @media (prefers-reduced-motion: reduce) {
+    .js .section-body { transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -119,7 +129,7 @@
         <li>Continual system modernization</li>
         <li>REST and JWT data integration</li>
         <li>Linux system administration and support</li>
-        <li>Requirements analysis, systems analysis, technical documentation and user training</li>
+        <li>Requirements and systems analysis, technical documentation and user training</li>
       </ul>
     </div>
   </section>
@@ -129,10 +139,10 @@
     <div class="section-body">
       <p>Client details are confidential, so these examples are anonymized.</p>
 
-      <h3>One-click release automation</h3>
+      <dt>One-click release automation</dt>
       <p>For a provincial government financial data warehouse, we replaced a multi-person manual release process with an automated pipeline using Jenkins and GitHub Actions. One person can now release reports, applications and database changes across delivery, test and production databases in a single step. This removed the multi-week scheduling lead time and cut emergency-fix turnaround from multiple days to a single afternoon.</p>
 
-      <h3>Data feed migration to a REST API</h3>
+      <dt>Data feed migration to a REST API</dt>
       <p>We moved a PeopleSoft data feed from a direct Oracle database extract to REST access with JWT authentication against a cloud-hosted source on Oracle Cloud Infrastructure. We developed the PL/SQL components that handled the REST layer and isolated the change from other components.</p>
     </div>
   </section>
@@ -170,17 +180,20 @@
 /* Minimal accordion. Sections start collapsed and open on click.
    Without JavaScript, every section stays visible. */
 (function () {
-  let sections = document.querySelectorAll('[data-accordion]');
+  var sections = document.querySelectorAll('[data-accordion]');
   sections.forEach(function (section, i) {
-    let title = section.querySelector('.section-title');
-    let body = section.querySelector('.section-body');
-    let label = title.textContent;
-    let bodyId = 'section-body-' + i;
+    var title = section.querySelector('.section-title');
+    var body = section.querySelector('.section-body');
+    var label = title.textContent;
+    var bodyId = 'section-body-' + i;
 
     body.id = bodyId;
-    body.hidden = true;
+    var inner = document.createElement('div');
+    inner.className = 'section-inner';
+    while (body.firstChild) { inner.appendChild(body.firstChild); }
+    body.appendChild(inner);
 
-    let button = document.createElement('button');
+    var button = document.createElement('button');
     button.type = 'button';
     button.className = 'toggle';
     button.setAttribute('aria-expanded', 'false');
@@ -191,9 +204,9 @@
     title.appendChild(button);
 
     button.addEventListener('click', function () {
-      let open = button.getAttribute('aria-expanded') === 'true';
+      var open = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!open));
-      body.hidden = open;
+      body.classList.toggle('open', !open);
     });
   });
 })();
