@@ -50,25 +50,14 @@
   dl { margin: 0; }
   dt { font-weight: 600; margin-top: .6rem; }
   dd { margin: 0; color: var(--muted); }
+  header { border-top: 1px solid var(--line); padding-block-start: 1.25rem; margin-top: 1.5rem;}
   footer { margin-top: 3rem; color: var(--muted); font-size: .9rem; }
 
-  /* Banner and logo placeholders.
-     When you add real images, delete the .placeholder class and the
-     placeholder text, and use the <img> tags shown in the HTML comments. */
-  .banner { width: 100%; margin: 0 0 1.5rem; }
-  .banner img { display: block; width: 100%; height: auto; }
+  /* Banner and logo */
+  .banner { width: 100%; margin: 0 0 1.5rem; align-items: center; }
+  .banner img { display: block; width: 50%; height: auto; margin: auto; }
   .logo { margin: 0 0 1rem; }
   .logo img { display: block; height: 3.5rem; width: auto; }
-  .placeholder {
-    display: flex; align-items: center; justify-content: center;
-    background: var(--placeholder);
-    border: 2px dashed var(--line);
-    color: var(--muted);
-    font-size: .85rem;
-    text-align: center;
-  }
-  .banner.placeholder { aspect-ratio: 4 / 1; }
-  .logo.placeholder { width: 10rem; height: 3.5rem; }
 
   /* Sections */
   section { border-top: 1px solid var(--line); margin-top: 1.25rem; }
@@ -103,22 +92,19 @@
 <body>
 <main>
 
-  <!-- BANNER PLACEHOLDER
-       Replace the div below with:
-       <div class="banner"><img src="images/banner.jpg" alt="IslandTech Computer Group" width="1600" height="400"></div>
-       Suggested size: 1600 x 400 px (4:1). Keep any text in the image to a minimum. -->
-  <div class="banner placeholder" role="img" aria-label="Banner image placeholder">Banner image (suggested 1600 x 400 px)</div>
+  <!-- BANNER -->
+       <div class="banner">
+         <picture>
+           <source srcset="images/logo_white.webp" media="(prefers-color-scheme: dark)">
+           <img       src="images/logo_nobg.webp" alt="IslandTech Computer Group banner" width="1600" height="400">
+         </picture>
+       </div>
+       <!--Suggested size: 1600 x 400 px (4:1). Keep any text in the image to a minimum. -->
 
   <header>
-    <!-- LOGO PLACEHOLDER
-         Replace the div below with:
-         <div class="logo"><img src="images/logo.svg" alt="IslandTech Computer Group logo" height="56"></div>
-         Suggested: SVG or transparent PNG, about 56 px high. -->
-    <div class="logo placeholder" role="img" aria-label="Logo placeholder">Logo</div>
-
-    <h1>IslandTech Computer Group</h1>
-    <p class="tagline">Independent Oracle database development, data warehousing and reporting consultant. Serving clients since 1997.</p>
-    <p>IslandTech Computer Group is based in British Columbia. We provide systems support, build and maintain data warehouses, ETL and reporting, and modernize and automate application deployment pipelines.</p>
+    <!--h1>IslandTech Computer Group</h1-->
+    <p class="tagline">IslandTech Computer Group provides Oracle database development, data warehousing and reporting consulting. Serving clients since 1997.</p>
+    <p>We are based in British Columbia on Vancouver Island. We provide systems support, build and maintain data warehouses, ETL and reporting, and modernize and automate application deployment pipelines.</p>
   </header>
 
   <section data-accordion>
@@ -161,7 +147,7 @@
         <dt>Delivery</dt>
         <dd>Git; Jenkins; GitHub Actions; Ansible; CI/CD; Docker; Vagrant; VirtualBox</dd>
         <dt>Integration and scripting</dt>
-        <dd>REST; JWT; JavaScript; Node; bash/ksh; Linux</dd>
+        <dd>REST; JWT; JavaScript; Node; Discord; bash/ksh; Linux</dd>
       </dl>
     </div>
   </section>
@@ -175,7 +161,7 @@
   </section>
 
   <footer>
-    <p>&copy; IslandTech Computer Group</p>
+    <p>&copy; 2026 IslandTech Computer Group</p>
   </footer>
 </main>
 
@@ -183,20 +169,20 @@
 /* Minimal accordion. Sections start collapsed and open on click.
    Without JavaScript, every section stays visible. */
 (function () {
-  var sections = document.querySelectorAll('[data-accordion]');
+  let sections = document.querySelectorAll('[data-accordion]');
   sections.forEach(function (section, i) {
-    var title = section.querySelector('.section-title');
-    var body = section.querySelector('.section-body');
-    var label = title.textContent;
-    var bodyId = 'section-body-' + i;
+    let title = section.querySelector('.section-title');
+    let body = section.querySelector('.section-body');
+    let label = title.textContent;
+    let bodyId = 'section-body-' + i;
 
     body.id = bodyId;
-    var inner = document.createElement('div');
+    let inner = document.createElement('div');
     inner.className = 'section-inner';
     while (body.firstChild) { inner.appendChild(body.firstChild); }
     body.appendChild(inner);
 
-    var button = document.createElement('button');
+    let button = document.createElement('button');
     button.type = 'button';
     button.className = 'toggle';
     button.setAttribute('aria-expanded', 'false');
@@ -207,7 +193,7 @@
     title.appendChild(button);
 
     button.addEventListener('click', function () {
-      var open = button.getAttribute('aria-expanded') === 'true';
+      let open = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!open));
       body.classList.toggle('open', !open);
     });
