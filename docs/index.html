@@ -56,7 +56,6 @@
   /* Banner and logo */
   .banner { width: 100%; margin: 0 0 1.5rem; align-items: center; }
   .banner img { display: block; width: 50%; height: auto; margin: auto; }
-  .logo { margin: 0 0 1rem; }
   .logo img { display: block; height: 3.5rem; width: auto; }
 
   /* Sections */
@@ -95,8 +94,8 @@
   <!-- BANNER -->
        <div class="banner">
          <picture>
-           <source srcset="images/logo_white.webp" media="(prefers-color-scheme: dark)">
-           <img       src="images/logo_nobg.webp" alt="IslandTech Computer Group banner" width="1600">
+           <source srcset="images/logo_nobg_dark.webp" media="(prefers-color-scheme: dark)">
+           <img       src="images/logo_nobg_light.webp" alt="IslandTech Computer Group banner" width="1300">
          </picture>
        </div>
        <!--Suggested size: 1600 x 400 px (4:1). Keep any text in the image to a minimum. -->
@@ -104,22 +103,31 @@
   <header>
     <!--h1>IslandTech Computer Group</h1-->
     <p class="tagline">IslandTech Computer Group provides Oracle database development, data warehousing and reporting consulting. Serving clients since 1997.</p>
-    <p>We are based in British Columbia on Vancouver Island. We provide systems support, build and maintain data warehouses, ETL and reporting, and modernize and automate application deployment pipelines.</p>
+    <p>We are based in British Columbia on Vancouver Island. We provide systems support, build and maintain data warehouses, ETL and reporting, and modernize and automate application deployment pipelines.  Able to work independently or cooperatively as part of a larger team.</p>
   </header>
 
   <section data-accordion>
     <h2 class="section-title">Services</h2>
     <div class="section-body">
-      <ul>
-        <li>Data warehouse design, ETL and data modelling</li>
-        <li>Oracle SQL and PL/SQL development</li>
-        <li>Oracle Reports development</li>
-        <li>Release automation for databases, reports and applications (Jenkins, GitHub Actions)</li>
-        <li>Continual system modernization</li>
-        <li>REST and JWT data integration</li>
-        <li>Linux system administration and support</li>
-        <li>Requirements and systems analysis, technical documentation and user training</li>
-      </ul>
+      <dl class="services">
+        <dt>Data warehousing and ETL</dt>
+        <dd>Design, build and maintain data warehouses and the processes that load them, with a clear data model and dependable, well-documented data flows.</dd>
+
+        <dt>Database development</dt>
+        <dd>New development and enhancement of database applications, including schema design, application logic, data access and performance tuning.</dd>
+
+        <dt>Reporting and data analysis</dt>
+        <dd>Design and delivery of reports for business users, plus data analysis to investigate issues and answer questions.</dd>
+
+        <dt>DevOps and Release automation</dt>
+        <dd>Set up repeatable, automated deployment of database, reporting and application changes, so releases are faster, safer and don't depend on manual steps.</dd>
+
+        <dt>System integration</dt>
+        <dd>Connect systems and move data between them using secure, standards-based interfaces.</dd>
+
+        <dt>Support and documentation</dt>
+        <dd>Ongoing support and maintenance of existing applications, along with requirements analysis, technical documentation and user training.</dd>
+      </dl>
     </div>
   </section>
 
@@ -144,10 +152,12 @@
         <dd>Oracle 19c, 12c, 11g; SQL; PL/SQL; SQL*Loader; Oracle Partitioning; Virtual Private Database; Oracle Advanced Security; Oracle Financials R12; PeopleSoft schema; AirTable</dd>
         <dt>Reporting and middleware</dt>
         <dd>Oracle Reports 12c; Oracle Fusion Middleware / OAS 12c</dd>
-        <dt>Delivery</dt>
-        <dd>Git; Jenkins; GitHub Actions; Ansible; CI/CD; Docker; Vagrant; VirtualBox</dd>
-        <dt>Integration and scripting</dt>
-        <dd>REST; JWT; JavaScript; Node; Discord; bash/ksh; Linux</dd>
+        <dt>DevOps and delivery</dt>
+        <dd>Git; Jenkins; GitHub Actions; Ansible; CI/CD; Docker;</dd>
+        <dt>Application Integration and development</dt>
+        <dd>REST; JWT; JavaScript; Node; Discord; </dd>
+        <dt>Systems Operations</dt>
+        <dd>bash/ksh; Vagrant; VirtualBox; Linux; RedHat/RHEL; CentOS; Debian; Oracle Linux; Rocky; Networking; SMB; DNS; SMTP; SSL; RAID; </dd>
       </dl>
     </div>
   </section>
@@ -155,8 +165,12 @@
   <section data-accordion>
     <h2 class="section-title">Contact</h2>
     <div class="section-body">
-      <p>Available for contract engagements.</p>
-      <p><script type="text/javascript">document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'l'+'t'+'o'+':'+'i'+'n'+'f'+'o'+'@'+'i'+'s'+'l'+'a'+'n'+'d'+'t'+'e'+'c'+'h'+'.'+'b'+'c'+'.'+'c'+'a'+"'"+'>'+'E'+'m'+'a'+'i'+'l'+' '+'u'+'s'+' '+'h'+'e'+'r'+'e'+'<'+'/'+'a'+'>');</script><br>
+      <dt>Contact</dt>
+      <dd><script type="text/javascript">document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'l'+'t'+'o'+':'+'i'+'n'+'f'+'o'+'@'+'i'+'s'+'l'+'a'+'n'+'d'+'t'+'e'+'c'+'h'+'.'+'b'+'c'+'.'+'c'+'a'+"'"+'>'+'E'+'m'+'a'+'i'+'l'+' '+'u'+'s'+' '+'h'+'e'+'r'+'e'+'<'+'/'+'a'+'>');</script></dd>
+      <dt>Engagements</dt>
+      <dd>Contract and fixed-scope projects with limited or open-ended timelines</dd>
+      <dt>Insurance</dt>
+      <dd>Commercial general liability and errors and omissions coverage. Certificates available on request.</dd>
     </div>
   </section>
 
